@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+    defaultConfig {
+        applicationId "com.example.ecommerce"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    //implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
+    implementation 'com.google.firebase:firebase-core:17.0.1'
+    implementation 'com.google.firebase:firebase-database:18.0.0'
+//dependency created for using firebase database
+    implementation 'com.google.firebase:firebase-storage:18.1.0'//for storing data on firebase
+    implementation 'com.firebaseui:firebase-ui-database:3.2.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+//to display pictures to retrived from database and then displayed
+    implementation 'com.github.rey5137:material:1.2.5' // for buttons design got from rey5137 github
+    implementation 'androidx.cardview:cardview:1.0.0'//for cart views from rey
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'//for recycler view from rey
+    implementation 'de.hdodenhof:circleimageview:3.0.0'//circle libary for circular pics icon
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+// arthur library for cropping image in profile dp
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
+// android arsenal elegant number button for cart adding number products
+    implementation 'io.paperdb:paperdb:2.6'//paper library for remembering
+    implementation 'com.android.support:design:28.0.0'
+    // implementation 'com.google.android.material:material:1.0.0'
+    //implementation 'androidx.cardview:cardview:1.0.0'
+    // implementation 'androidx.recyclerview:recyclerview:1.1.0-beta01'
+
+    implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0-alpha08'
+    testImplementation 'junit:junit:4.13-beta-3'
+    androidTestImplementation 'androidx.test:runner:1.3.0-alpha02'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0-alpha02'
+    implementation 'androidx.mediarouter:mediarouter:1.0.0'
+
+}
+
+apply plugin: 'com.google.gms.google-services'
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
